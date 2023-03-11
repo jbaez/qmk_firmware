@@ -26,6 +26,7 @@ OPT_DEFS += -DKC_BLUETOOTH_ENABLE
 
 CUSTOM_MATRIX = lite
 SRC += matrix.c
+SRC += custom_shift_keys.c
 
 include keyboards/keychron/bluetooth/bluetooth.mk
 

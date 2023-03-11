@@ -29,6 +29,8 @@
 #    include "factory_test.h"
 #endif
 
+#include "custom_shift_keys.h"
+
 #define POWER_ON_LED_DURATION 3000
 
 typedef struct PACKED {
@@ -72,6 +74,7 @@ bool process_record_kb_bt(uint16_t keycode, keyrecord_t *record) {
 #else
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 #endif
+    if (!process_custom_shift_keys(keycode, record)) { return false; }
     static uint8_t host_idx = 0;
 
     switch (keycode) {

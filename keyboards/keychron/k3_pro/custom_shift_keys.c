@@ -1,7 +1,21 @@
 // Copyright 2021-2023 Google LLC.
 // SPDX-License-Identifier: Apache-2.0
 
+#include QMK_KEYBOARD_H
 #include "custom_shift_keys.h"
+
+const custom_shift_key_t custom_shift_keys[] = {
+  {KC_6, KC_AMPR},
+  {KC_7, KC_SLASH},
+  {KC_8, KC_LPRN},
+  {KC_9, KC_RPRN},
+  {KC_0, KC_EQL},
+  {KC_QUES, KC_CIRC},
+  {KC_PLUS, KC_ASTR},
+};
+uint8_t NUM_CUSTOM_SHIFT_KEYS =
+    sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
+
 
 bool process_custom_shift_keys(uint16_t keycode, keyrecord_t *record) {
   static uint16_t registered_keycode = KC_NO;
